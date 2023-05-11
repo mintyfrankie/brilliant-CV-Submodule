@@ -24,6 +24,17 @@ typst --font-path ./src/fonts compile cv.typ
 
 ### Method 2: Add the submodule repository to your git project
 
+```bash
+cd your/CV/project
+git submodule add https://github.com/mintyfrankie/awesomeCV-Typst-Submodule awesomeCV
+typst compile cv.typ
+```
+
+When the template file is updated:
+
+```bash
+git submodule update --remote
+```
 
 ## Credit
 
