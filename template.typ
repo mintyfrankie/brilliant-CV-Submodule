@@ -235,7 +235,7 @@
 
 #let makeHeaderInfo() = {
   let personalInfoIcons = (
-    phone: [\u{f2c1}],
+    phone: [\u{f10b}],
     email: [\u{f0e0}],
     linkedin: [\u{f08c}],
     homepage: [\u{1f5d6}],
