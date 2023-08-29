@@ -3,3 +3,7 @@
   <br><br>
   Brilliant CV Submodule
 </h1>
+
+Please refer to the [example repository](https://github.com/mintyfrankie/brilliant-CV) for more information.
+
+Any issue or PR is welcomed!
