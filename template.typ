@@ -27,11 +27,11 @@
 ]
 
 #let autoImport(file) = {
-  if varLanguage == "" {
+  if varVersion == "" {
     include {"../modules/" + file + ".typ"}
   }
   else {
-    include {"../modules_" + varLanguage + "/" + file + ".typ"}
+    include {"../modules_" + varVersion + "/" + file + ".typ"}
   }
 }
 
