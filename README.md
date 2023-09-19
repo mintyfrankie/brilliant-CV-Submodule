@@ -11,7 +11,8 @@ Should be fully compatible with the original version, but minor changes in `meta
 
 ## guide for multi-version and language
 ### Compatibility
-`varVersion` is used to specify the version of the CV, i.e., `modules_cn` and `varLanguage` is used to specify the language of certain entry.
+`varVersion` is used to specify the version of the CV, i.e., `modules_cn` or `modules_SinglePage` in my usage;
+`varLanguage` is used to specify the language of certain entry.
 
 Basic usage is the same as the original version, but you **need** to rename one of the variables in `metadata.typ` as follows:
 
