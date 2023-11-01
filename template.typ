@@ -411,7 +411,7 @@
   date: "1990",
   title: "Title",
   issuer: "",
-  online: "",
+  url: "",
   location: ""
 ) = {
   table(
@@ -424,7 +424,7 @@
     if issuer == "" {
       honorTitleStyle(title)
     } else if link != "" { [
-      #honorTitleStyle(link(online)[#title]), #honorIssuerStyle(issuer)
+      #honorTitleStyle(link(url)[#title]), #honorIssuerStyle(issuer)
     ] } else { [
       #honorTitleStyle(title), #honorIssuerStyle(issuer)
     ]},
