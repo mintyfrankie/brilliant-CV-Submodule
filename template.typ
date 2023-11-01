@@ -1,6 +1,6 @@
-// brilliant-CV 2023-09-13 mintyfrankie
+// brilliant-CV 2023-11-01 mintyfrankie
 // Github Repo: https://github.com/mintyfrankie/brilliant-CV
-// Typst version: 0.8.0
+// Typst version: 0.9.0
 
 /* Packages */
 #import "../metadata.typ": *
@@ -326,16 +326,20 @@
   }
 }
 
-#let cvSection(title) = {
-  let highlightText = title.slice(0,3)
-  let normalText = title.slice(3)
+#let cvSection(title, highlighted: true, letters: 3) = {
+  let highlightText = title.slice(0,letters)
+  let normalText = title.slice(letters)
 
   v(beforeSectionSkip)
   if nonLatinOverwrite {
     sectionTitleStyle(title, color: accentColor)
   } else {
+    if highlighted {
     sectionTitleStyle(highlightText, color: accentColor)
     sectionTitleStyle(normalText, color: black)
+    } else {
+      sectionTitleStyle(title, color: black)
+    }
   }
   h(2pt)
   box(width: 1fr, line(stroke: 0.9pt, length: 100%))
@@ -434,13 +438,8 @@
   keyList: list(),
   refStyle: "apa",
 ) = {
-  show cite: it => hide(it)
   show bibliography: it => publicationStyle(it)
-  bibliography(bibPath, title: none, style: refStyle)
-  for key in keyList {
-    cite(key)
-  }
-  v(-15pt)
+  bibliography(bibPath, title: none, style: refStyle, full: true)
 }
 
 #let cvFooter() = {
