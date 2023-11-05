@@ -4,8 +4,6 @@
 
 /* Packages */
 #import "../metadata.typ": *
-#import "@preview/fontawesome:0.1.0": *
-
 
 /* Language-specific Macros */
 #let nonLatinOverwrite = false
@@ -239,49 +237,26 @@
   hasPhoto: true
 ) = {
   let makeHeaderInfo() = {
-    let personalInfoIcons = (
-      phone: fa-phone(),
-      email: fa-envelope(),
-      linkedin: fa-linkedin(),
-      homepage: fa-pager(),
-      github: fa-square-github(),
-      gitlab: fa-gitlab(),
-      orcid: fa-orcid(),
-      researchgate: fa-researchgate(),
-      location: fa-location-dot(),
-      extraInfo: "",
-    )
     let n = 1
-    for (k, v) in personalInfo {
+    for d in personalInfo {
       // A dirty trick to add linebreaks with "linebreak" as key in personalInfo
-      if k == "linebreak" {
+      if "text" in d == "linebreak" {
         n = 0
         linebreak()
         continue
       }
-      if v != "" {box({
-        
-        // Adds icons
-        personalInfoIcons.at(k) + h(5pt)
-        // Adds hyperlinks
-        if k == "email" {
-          link("mailto:" + v)[#v]
-        } else if k == "linkedin" {
-          link("https://www.linkedin.com/in/" + v)[#v]
-        } else if k == "github" {
-          link("https://github.com/" + v)[#v]
-        } else if k == "gitlab" {
-          link("https://gitlab.com/" + v)[#v]
-        } else if k == "homepage" {
-          link("https://" + v)[#v]
-        } else if k == "orcid" {
-          link("https://orcid.org/" + v)[#v]
-        } else if k == "researchgate" {
-          link("https://www.researchgate.net/profile/" + v)[#v]
-        } else {
-          v
+      box({
+        // Adds icon
+        if "icon" in d {
+          d.icon + h(5pt)
         }
-      })} 
+        if "link" in d and "text" in d {
+          link(d.link)[#d.text]
+        }
+        if not "link" in d and "text" in d {
+          d.text
+        }
+      })
       // Adds hBar
         if n != personalInfo.len() {
           hBar() 
