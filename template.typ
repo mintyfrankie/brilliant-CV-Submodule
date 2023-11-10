@@ -259,6 +259,17 @@
         linebreak()
         continue
       }
+      if k.contains("custom") {
+        // example value (icon: fa-graduation-cap(), text: "PhD", link: "https://www.example.com")
+        let icon = v.at("icon")
+        let text = v.at("text")
+        let link_value = v.at("link")
+        box({
+          icon + h(5pt)
+          link(link_value)[#text]
+        })
+        continue
+      }
       if v != "" {box({
         
         // Adds icons
