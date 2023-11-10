@@ -1,5 +1,4 @@
 // NOTICE: Copy this file to your root folder.
-#import "@preview/fontawesome:0.1.0": *
 
 
 /* Personal Information */
