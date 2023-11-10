@@ -1,6 +1,5 @@
 // NOTICE: Copy this file to your root folder.
 
-
 /* Personal Information */
 #let firstName = "John"
 
@@ -11,7 +10,7 @@
   phone: "+33 6 12 34 56 78",
   email: "john.doe@me.org",
   linkedin: "johndoe",
-  //custom-1: (icon: "", text: "example", link: "https://whoami.com"),
+  //custom-1: (icon: "", text: "example", link: "https://example.com"),
   //gitlab: "mintyfrankie",
   //homepage: "jd.me.org",
   //orcid: "0000-0000-0000-0000",
