@@ -249,6 +249,7 @@
       orcid: fa-orcid(),
       researchgate: fa-researchgate(),
       location: fa-location-dot(),
+      pgp: fa-key(),
       extraInfo: "",
     )
     let n = 1
@@ -290,6 +291,8 @@
           link("https://orcid.org/" + v)[#v]
         } else if k == "researchgate" {
           link("https://www.researchgate.net/profile/" + v)[#v]
+        } else if k == "pgp" {
+          link("https://keys.openpgp.org/search?q=" + v)[#v]
         } else {
           v
         }
