@@ -300,6 +300,7 @@
   description: "Description",
   logo: "",
   tags: (),
+  url: "",
 ) = {
   let ifSocietyFirst(condition, field1, field2) = {
     return if condition { field1 } else { field2 }
@@ -314,6 +315,9 @@
   }
   let setLogoContent(path) = {
     return if logo == "" [] else { image(path, width: 100%) }
+  }
+  if url != "" {
+    society = link(url)[#society]
   }
   v(beforeEntrySkip)
   table(
